@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <!-- Your CSS -->
+    <link href="/css/servicePages/services-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="First Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">ABOUT SERVICE</h5>
+                    <p style="text-align: justify;">In the fast-paced world we live in, finding time for fitness can be a challenge. 
+                        That's where our Gym Instructor Service at Home comes in, bringing the expertise of certified fitness professionals right to your doorstep.
+                         Our experienced instructors are dedicated to tailoring fitness routines that align with your goals and preferences.
+                          Whether you're a beginner seeking guidance or a fitness enthusiast aiming to elevate your workout routine,
+                           our instructors design personalized sessions to maximize results. Enjoy the convenience of achieving your fitness objectives from the comfort of your home, 
+                           eliminating the need for gym commutes. With a focus on motivation, technique, and personalized attention, our Gym Instructor Service ensures that each session is not only effective but also enjoyable. 
+                        Embrace a healthier lifestyle with the support of our skilled instructors, fostering a commitment to your well-being at your own pace and in your own space.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Second Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">Terms And Policy</h5>
+                    <ol style="text-align: justify;">
+                        <li><strong>Session Scheduling:</strong> Must be scheduled in advance, subject to the availability of our gym instructors.</li>
+                        <li><strong>Workout Space and Equipment:</strong> Clients provide a suitable workout space and any necessary equipment.</li>
+                        <li><strong>Payment Terms:</strong> Due prior to each session; packages are non-refundable and non-transferable.</li>
+                        <li><strong>Instructor Guidance:</strong> Follow the guidance of our certified gym instructors for safety.</li>
+                        <li><strong>Medical Disclosure:</strong> Disclose any medical conditions or injuries before starting the training program.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Third Slide">
+                <div class="carousel-caption glass">
+                    <p style="text-align: justify;">
+                    Choose our Gym Instructor Service at Home for a fitness journey tailored to your needs. Our certified trainers bring expertise and motivation to your doorstep,
+                     ensuring personalized workouts that fit seamlessly into your schedule. Enjoy the convenience of achieving your fitness goals without 
+                     leaving the comfort of your home. We prioritize your well-being, providing a holistic approach that considers your fitness level, preferences,
+                      and objectives. With us, you're not just getting a workout; you're getting a partner in your journey to a healthier lifestyle.
+                       Elevate your fitness experience with professional guidance and achieve sustainable results with our dedicated team of gym instructors.
+                    </p>
+                       <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#availNowModal">Avail Service</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Avail Now Modal -->
+    <div class="modal fade" id="availNowModal" tabindex="-1" aria-labelledby="availNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="availNowModalLabel">Avail Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body center-text">
+                    <form id="availform" action="/services/availFormAction" method="post"  novalidate>
+                        <input type="hidden" name="serviceType" value="gym"> <!-- Set the service type dynamically -->
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                            <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" 
+                                   min="0" max="100000" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceDate" class="form-label">Service Date</label>
+                            <input type="date" class="form-control" id="serviceDate" name="serviceDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceTime" class="form-label">Service Time</label>
+                            <select class="form-select" id="serviceTime" name="serviceTime" required>
+                                <option value="7am-10am">7am - 10am</option>
+                                <option value="10am-1pm">10am - 1pm</option>
+                                <option value="1pm-4pm">1pm - 4pm</option>
+                                <option value="4pm-7pm">4pm - 7pm</option>
+                                <option value="7pm-8pm">7pm - 8pm</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Get Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // Custom JavaScript for form validation
+        (function () {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+
+</html>

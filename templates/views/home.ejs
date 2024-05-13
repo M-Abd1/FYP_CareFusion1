@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareFusion</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <!--CSS-->
+     <link href="/css/home.css" rel="stylesheet" >
+     <!--JavaScript-->
+     <script src="/scripts/home.js"></script>
+  </head>
+<body>
+
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/home/logo.png" width="220"></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center " id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white  p-2" aria-current="page" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white p-2" href="/services/services">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white p-2" href="#About">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-white p-2" href="#">BLOGS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white p-2 text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Safety and Resilience
+                    </a>
+                    <ul class="dropdown-menu bg-light">
+                      <li><a class="dropdown-item  text-uppercase" href="/insurance">Insurance</a></li>
+                      <li><a class="dropdown-item  text-uppercase" href="/complain">Complaints</a></li>
+                      <li><a class="dropdown-item  text-uppercase" href="/security">Safety Measures</a></li>
+                    </ul>
+                  </li>
+                  <% if (user === "Visitor") { %>
+                  <a href="/login" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-5">LOGIN</a>
+                  <% }  else if (user === "Service Provider") { %>
+                    <div class="profile-container d-flex align-items-center">
+                    <a href="/provider/provProfile" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-5">Become a Service Provider</a></li>
+                    <a href="/provider/viewJob" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-5">View Jobs</a></li>
+
+                    <div class="dropdown">
+                      <a class="d-inline-block dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="<%= profileImage %>" alt="Profile Image" style="margin-left: 10px;margin-right: 10px;" class="rounded-circle mt-3" width="30" height="30" onerror="this.onerror=null; this.src='/images/profile.png';">
+                    </a>
+                     <ul class="dropdown-menu bg-light" aria-labelledby="profileDropdown">
+                      <li><a class="dropdown-item" href="/provider/dashboard">Dashboard</a></li>
+                      <li><a class="dropdown-item" href="/signout">Sign Out</a></li>
+                    </ul>
+                    </div>
+                   </div>
+                  <% } else if (user === "Service Seeker") { %>
+                    <div class="profile-container d-flex align-items-center">
+                      <a href="/seeker/postJob" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2">Post a service</a>
+                      <a href="/seeker/findWorker" style="margin-left: 10px;" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2">Find Worker</a>
+                      <div class="dropdown">
+                        <a class="d-inline-block dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="<%= profileImage %>" alt="Profile Image" class="rounded-circle mt-3 ms-3" width="30" height="30" onerror="this.onerror=null; this.src='/images/profile.png';">
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="profileDropdown">
+                          <li><a class="dropdown-item" href="/seeker/dashboard">Dashboard</a></li>
+                          <li><a class="dropdown-item" href="/signout">Sign Out</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+  <!-- Banner-->
+  <header id="Home" class="banner">
+    <div class="container px-4 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-white fw-bold banner-head">CareFusion</h1>
+                <h4 class="text-white mx-auto mt-2 mb-5">Discover Seamless Care Solutions with CareFusion, Your All-in-One Care Services Platform!</h4>
+               <button type="button" class="btn fw-bold px-4 py-3 text-uppercase border-0 banner-btn rounded-5"><a href="/login">Get Started</a></button> 
+            </div>
+        </div>
+    </div>
+  </header>
+
+  
+ <!--Container-->
+ <div class="container py-5">
+  <div class="row">
+    <div class="col-lg col-sm-auto p-4 mt-3">
+      <h3 class="fs-4 fw-bold text-center text-uppercase animate-heading" id="heading1">What we believe in</h3>
+      <h5 class="py-3 text-center  sub-heading lh-base"> We believe in redefining convenience by seamlessly connecting individuals with top-tier care services.
+         Our mission is to empower lifestyles through innovative technology and a commitment to simplifying everyday care needs.</h5>
+    </div> 
+  </div>
+  <hr>
+
+
+ <!--Services-->
+ <div class="row">
+  <div class="col-12">
+    <h3 class="mt-4 fs-4 fw-bold text-center text-uppercase animate-heading">Our top Services</h3>
+    <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel"  data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/home/c1.jpg" class="d-block img-fluid w-100" alt="wedding decoration">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">Event Planner</h5>
+            <p class="text-center text-dark">"Creating Unforgettable Moments: Elevate Your Events with Our Premier Event Services!"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 btn-carousal border-0"><a href="/services/eventPlanner">Check now</a></button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="/images/home/c2.jpg" class="d-block w-100 c-img" alt="selena gomez">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">Makeup services</h5>
+            <p class="text-center text-dark">"Transforming Beauty, Salon Services Redefined with Expert Makeup Artistry!"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 border-0 btn-carousal"><a href="/services/makeUp">Check now</a></button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="/images/home/c3.jpg" class="d-block c-img" alt="chris hemsworth">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">fitness trainer</h5>
+            <p class="text-center text-white">"Transform Your Body, Transform Your Life, Expert Fitness Training Services at Your Fingertips!"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 border-0 btn-carousal"><a href="/services/gym">Check now</a></button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="/images/home/c4.jpg" class="d-block c-img" alt="baby">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">Baby Care</h5>
+            <p class="text-center text-dark">"Comprehensive Baby Care Services Tailored for Your Precious Ones!"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 border-0 btn-carousal"><a href="/services/babySitter">Check now</a></button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="/images/home/c5.jpg" class="d-block c-img" alt="maid">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">maid services</h5>
+            <p class="text-center text-dark">"Experience Unmatched Cleanliness and Convenience with Our Premier Maid Services"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 border-0 btn-carousal"><a href="/services/maid">Check now</a></button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="/images/home/c6.jpg" class="d-block c-img" alt="maid">
+          <div class="carousel-caption d-none d-sm-block d-md-block glass">
+            <h5 class="text-center text-uppercase">Chef</h5>
+            <p class="text-center text-white">"Masterful Culinary Creations: Embark on a Gastronomic Journey with Our Expert Chef's Exquisite Expertise!"</p>
+            <button class="btn btn-primary fw-bold px-3 py-2 text-uppercase rounded-5 border-0 btn-carousal"><a href="/services/chef">Check now</a></button>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+ </div>
+ 
+
+ <!--About-->
+ <div id="About" class="row my-5" id="scrollspyHeading1" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <div class="col-lg-5 col-md-12 col-xs-8 my-2">
+    <h6 class="fw-bold animate-heading2">ABOUT</h6>
+    <h3 class="sub-heading">Who we are</h3>
+    <p class="pe-4">Established in 2023, CareFusion emerged with a mission to revolutionize the care services industry
+       by offering a diverse array of specialized services on a single, user-centric platform. Driven by a commitment to redefine convenience
+       and accessibility, our platform stands as a testament to our dedication towards simplifying life's demands.
+       At CareFusion, our unwavering determination fuels our efforts to deliver nothing short of excellence to our users. Our focus remains 
+       steadfast on providing top-tier care services, including maid assistance, culinary expertise, baby care, makeup artistry, home repairs,
+       tutoring, event organization, and more. We prioritize user satisfaction by ensuring a seamless and reliable experience that exceeds 
+       expectations.</p>
+       <button class="btn btn-contact mt-2 mb-2 px-3 py-2 text-uppercase rounded-5"><a href="#" class="text-white text-decoration-none">Contact us</a></button>
+  </div>
+  
+  <div class="col-lg-7 col-md-12 col-xs-4 ">
+    <img src="/images/home/img-1.jpg" alt="office" class="img-fluid img-1">
+  </div>
+ </div>
+ 
+
+  <!--Team-->
+ <div id="Team" class="row my-5">
+  <div class="col-lg-7 my-4">
+    <img src="/images/home/img-2.jpeg" alt="team" class="img-fluid img-1">
+  </div>
+  <div class="col-lg-5 col-md-12 col-xs-8 my-4 ps-4">
+    <h6 class="fw-bold animate-heading2">TEAM</h6>
+    <h3 class="sub-heading">Explore our team</h3>
+    <p class="text-secondary">At CareFusion, we are a dedicated team passionate about revolutionizing the care service industry.
+      We embody innovation, efficiency, and reliability, striving to be the go-to platform that seamlessly bridges users with a diverse
+      range of specialized care providers. Our commitment lies in creating a community-driven ecosystem that prioritizes user satisfaction
+      and convenience above all.<br>
+      With a dedicated focus on innovation and user convenience, we aim to set new standards in the care service landscape. We take pride 
+      in fostering a community-driven ecosystem where reliability, efficiency, and user satisfaction are paramount.</p>
+      <button class="btn btn-learn mt-2 mb-2 px-3 py-2 text-uppercase rounded-5"><a href="#" class="text-white text-decoration-none">Learn More</a></button>
+  </div>
+ </div>
+</div>
+
+
+<!--Blog-->
+
+<section id="blog" class="blog mt-4">
+  <h3 class="mt-2 pt-4 fs-4 fw-bold text-center text-uppercase animate-heading">Our Blog</h3>
+
+  <div class="card-group mt-3">
+      <div class="card m-3  glass">
+        <img src="/images/home/card1.png" class="card-img-top" alt="decoration">
+        <div class="card-body">
+          <h6 class="card-title fw-bold">Outdoor Decoration</h6>
+          <p class="card-text text-white">Unlock the Secrets to Stunning Outdoor Décor! From captivating garden arrangements to designs...</p>
+             <a href="#" class="text-decoration-none text-dark text-white">Read More→</a>
+             <p class="card-text mt-2"><small class="text-white">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+
+      <div class="card m-3 glass">
+        <img src="/images/home/card2.jpg" class="card-img-top" alt="makeup">
+        <div class="card-body">
+          <h6 class="card-title fw-bold">Bold Look</h6>
+          <p class="card-text text-white">Discover the Power of Bold Makeup! Dive into our latest blog to learn how to unleash your confidence.</p>
+          <a href="#" class="text-decoration-none text-white">Read More→</a>
+          <p class="card-text mt-2"><small class="text-white">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+  
+      <div class="card m-3 glass">
+        <img src="/images/home/card3.jpg" class="card-img-top" alt="trainer">
+        <div class="card-body">
+          <h6 class="card-title fw-bold">Potential at Gym!</h6>
+          <p class="card-text text-white"> Explore our latest blog to uncover top fitness tips and tricks, empowering you to sculpt your body.</p>
+             <a href="#" class="text-decoration-none text-white">Read More→</a>
+             <p class="card-text mt-2"><small class="text-white">Last updated 3 mins ago</small></p>
+        </div>
+      </div>    
+  
+      <div class="card m-3 glass">
+        <img src="/images/home/card4.jpeg" class="card-img-top" alt="lasagna">
+        <div class="card-body">
+          <h6 class="card-title fw-bold">Chicken Cajun Lasagna, Dish of week!</h6>
+          <p class="card-text text-white">Savor the Layers of Flavor! Indulge in a comforting harmony of tender chicken, rich cheese, and savory sauce in new recipe.</p>
+          <a href="#" class="text-decoration-none text-white">Read More→</a>
+          <p class="card-text mt-2"><small class="text-white">Last updated 3 mins ago</small></p>
+        </div>
+      </div>  
+      
+</div>
+<h5 class="text-center"><a href="#" class="text-decoration-none text-white animate-heading">Read our full blog here →</a> </h5>
+</section>
+
+ 
+ <!--Reviews-->
+
+ <section class="reviews">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 col-xl-8 text-center">
+      <h3 class="mb-4 mt-2 fs-4 fw-bold text-center text-uppercase animate-heading">What people say about us</h3>
+    </div>
+  </div>
+  <div class="row mt-4 pt-3 text-center">
+    <div class="col-md-3 mb-4 mb-md-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp"
+          class="rounded-circle shadow-1-strong" width="100" height="100" />
+      </div>
+      <p class="my-2 text-muted">
+        CareFusion made my life incredibly easier! From finding an excellent maid service to getting top-notch home repair 
+        assistance, their platform's convenience and range of services exceeded my expectations.
+      </p>
+      <p class="font-italic font-weight-normal mb-0 sub-head">- Anna Morian</p>
+    </div>
+    <div class="col-md-3 mb-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
+          class="rounded-circle shadow-1-strong" width="100" height="100" />
+      </div>
+      <p class="my-2 text-muted">
+        I've utilized CareFusion's home tuition services, and I must say, it's been a
+         game-changer for my child's academic journey. The tutor was highly skilled and tailored sessions to my child's needs.
+      </p>
+      <p class="font-italic font-weight-normal mb-0 sub-head">- Teresa May</p>
+    </div>
+    <div class="col-md-3 mb-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://i.pinimg.com/originals/d5/12/24/d5122440a147cf1ff5d89a565bf1489f.jpg"
+          class="rounded-circle shadow-1-strong" width="100" height="100" />
+      </div>
+      <p class="my-2 text-muted">
+        I'm amazed by the professionalism and expertise offered through CareFusion's makeup services. The makeup 
+        artist provided exceptional skills, transforming my look for a special event.
+      </p>
+      <p class="font-italic font-weight-normal mb-0 sub-head">- Emilia Bay</p>
+    </div>
+    <div class="col-md-3 mb-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://thumbs.dreamstime.com/b/handsome-man-black-suit-white-shirt-posing-studio-attractive-guy-
+        fashion-hairstyle-confident-man-short-beard-125019349.jpg"
+          class="rounded-circle shadow-1-strong" width="100" height="100" />
+      </div>
+      <p class="my-2 text-muted">
+        CareFusion's commitment to excellence truly shines through their exceptional customer service and range of care options.
+         Their platform not only connected me with a fantastic gym instructor.
+      </p>
+      <p class="font-italic font-weight-normal mb-0 sub-head">- William Hanks</p>
+    </div>
+  </div>
+</section>
+
+
+<!--Footer-->
+
+<footer>
+ <div class="row mt-3 p-4">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 footer-heading">
+    <img src="/images/home/1.png" width="200" class="mt-3">
+    <p class="text-white">Care Fusion, Copyright &copy 2023 All rights reserved</p>
+    <p class="text-white mt-1">At Care Fusion, we transcend the conventional bounds of a service platform. 
+      Our mission goes beyond mere connection, we directly link individuals to dedicated disability support workers and aged care professionals. </p>
+  </div>
+
+  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2  p-3 footer-heading">
+    <ul>
+      <li class="text-secondary fw-bold">Links</li>
+      <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+      <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+      <li><a href="#blog" class="text-white text-decoration-none">Blog</a></li>
+      <li><a href="#Team" class="text-white text-decoration-none">Team</a></li>
+    </ul>
+  </div>
+  
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+    <ul>
+      <li class="text-secondary fw-bold">Getting Started</li>
+      <li><a href="/login" class="text-white text-decoration-none">Login</a></li>
+      <li><a href="/signup" class="text-white text-decoration-none">Signup</a></li>
+      <li><a href="#" class="text-white text-decoration-none">Post your care needs</a></li>
+      <% if (user !== "Visitor") { %>
+      <li><a href="/provider/provProfile" class="text-white text-decoration-none">Become a Service Provider</a></li>
+      <% }  else { %>
+      <li><a href="/login?message= Unlock your service provider profile. Log in now!!" class="text-white text-decoration-none">Become a Service Provider</a></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+    <ul>
+      <li class="text-secondary fw-bold">Important</li>
+      <li><a href="#About" class="text-white text-decoration-none">About Us</a></li>
+      <li><a href="/T&C-PP" class="text-white text-decoration-none">Privacy Policy</a></li>
+      <li><a href="#" class="text-white text-decoration-none">Complaints Policy</a></li>
+      <li><a href="/T&C-PP" class="text-white text-decoration-none">Terms & conditions</a></li>
+    </ul>
+  </div>  
+ </div>
+
+ <div class="row ms-5">
+  <h4 class="text-white text-uppercase fs-5">Follow us on</h4>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <a href="#"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" width="30px"></a>
+    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/018/930/413/non_2x/instagram-logo-instagram-icon-transparent-free-png.png" width="50px"></a>
+    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/027/395/710/small/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" width="35px"></a>
+    <a href="#"><img src="https://www.freeiconspng.com/uploads/whatsapp-logo-background-29.png" width="50px"></a>
+  </div>
+ </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

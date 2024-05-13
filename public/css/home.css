@@ -1,0 +1,273 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/*Navigation Bar */
+
+.login-btn
+{
+    background: #626ee3;
+}
+.login-btn:hover
+{
+    background-color:#8993f0;
+}
+.navbar.scrolled
+{
+    background-color:#111618 !important;
+    transition: background-color 0.3s ease;
+}
+
+
+/*Sub heading*/
+
+.sub-heading
+{
+    color:#111618;
+}
+
+
+/*Banner */
+
+.banner 
+{
+    background-image:linear-gradient(rgba(0, 21, 41, 0.692), rgba(0, 21, 41, 0.801)), url("/images/home/1.jpg");
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 90vh;
+    padding: 15rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size:cover;
+    overflow: hidden;
+  }
+
+  .banner h1,
+  .banner h4,
+  .banner-btn 
+  {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  
+  .banner-btn a 
+  {
+    color: #fff;
+  }
+.banner-head
+{
+    font-size: 5.7em;
+} 
+.banner h4{
+    font-size: 1.6em;
+}
+.btn a{
+    color: whitesmoke;
+    text-decoration: none;
+} 
+.banner-btn{
+     background:#626ee3;
+}
+
+.banner-btn:hover{
+    background-color: #8993f0;
+}
+
+
+/*Container */
+
+.btn-contact{
+    background-color:#626ee3;
+}
+.btn-contact:hover{
+    background-color: #8993f0;
+}
+.btn-learn{
+    background-color: #626ee3;
+}
+.btn-learn:hover{
+    background-color: #8993f0;
+}
+.img-1{
+    transition: filter 0.3s ease;
+}
+.img-1:hover {
+    filter: grayscale(100%);
+}
+p{
+    text-align: justify;
+    color: #626161;
+}
+
+
+/*Carousel*/
+
+.carousel-item {
+    height: 90vh;
+    overflow: hidden;
+}
+.carousel-item img {
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%; 
+}
+.c-img{
+    background-position: center;
+}
+.glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.glass h5{
+    text-align: center;
+}
+.btn-carousal{
+    background-color: #626ee3;
+}
+.btn-carousal:hover{
+    background-color:#8993f0;
+}
+.carousel-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+
+/* Text Animation */
+
+.animate-heading{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 60%;
+    color: #001529;
+    opacity: 0.8;
+    &:hover::after{
+        width: 10%;
+    }
+    &::after{
+        position: absolute;
+        content: " ";
+        width: 0;
+        height: 5px;
+        top: 150%;
+        left: 45%;
+        background-color:#c7d7e6;
+        transition: all 0.2s;
+
+    }
+}
+.animate-heading2
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 60%;
+    color: #001529;
+    opacity: 0.8;
+    &:hover::after{
+        width: 10%;
+    }
+    &::after{
+        position: absolute;
+        content: " ";
+        width: 0;
+        height: 5px;
+        top: 150%;
+        left: 0;
+        background-color:#c7d7e6;
+        transition: all 0.2s;
+
+    }
+}
+
+
+/*Blog */
+
+.blog 
+{
+    background: center center/cover no-repeat;
+    background-color:#1a2a3a; 
+    color: #fff; 
+    padding: 20px 0; 
+}
+.blog h3 
+{
+  color: #fff;
+}
+.card h6{
+  color: #c7d7e6;
+}
+.card
+ {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: none;
+  }
+  .sub-head{
+    color: #001529;
+    font-weight:bold;
+  }
+
+
+/*Reviews*/
+
+.reviews{
+    height: auto;
+    padding: 60px;
+}
+
+
+/*Footer */
+
+footer{
+    background-color: #111618 ;
+    overflow: hidden;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 3px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px)
+ {
+    .login-btn {
+        width: 20%;
+        margin-top: 10px;
+    }
+    
+
+}
+
+@media screen and (min-width: 700px) {
+    .card {
+        transition: background 0.3s ease, transform 0.5s ease;
+    }
+
+    .card:hover {
+        background:#111618;
+    }
+}
+
+@media (max-width: 700px) {
+    .banner {
+      background:#001529;
+    }
+  }

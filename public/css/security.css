@@ -1,0 +1,168 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background: url('/images/postJob.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #111618 !important;
+}
+
+.navbar.scrolled {
+    background-color: #111618 !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand img {
+    width: 220px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #8993f0 !important;
+}
+
+.login-btn {
+    background: #626ee3;
+}
+
+.login-btn:hover {
+    background-color: #8993f0;
+}
+
+/* Landing Image Styles */
+.landing-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+}
+
+.landing-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.landing-image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.text{
+    font-size: 45px;
+    margin-left: 30px;
+
+}
+.text1{
+    font-size: 45px;
+    margin-left: 900px;
+    margin-top: 30px;
+
+}
+.text-left {
+    position: absolute;
+    top: 50%;
+    left: -900px; /* Adjust the distance from the left side */
+    transform: translateY(-50%);
+    background-color: rgba(189, 230, 240, 0.7); /* Adjust the background color and opacity */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+}
+
+/* Container Styles */
+.container {
+    max-width: 950px;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.hone {
+    margin-bottom: 10px;
+}
+
+.text-container {
+    color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+.insurance-description {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+}
+
+.image-container {
+    position: relative;
+    margin-left: 900px; /* Adjust margin as needed */
+}
+.image-container1 {
+    
+    margin-left: 0px; /* Adjust margin as needed */
+}
+.hover-image {
+    width: 100%;
+    max-width: 90%; /* Adjust the maximum width of the image as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition */
+    margin-bottom: 30px;
+}
+
+.hover-image:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+
+footer {
+    background-color: #111618;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 3px;
+}
+
+.text-white {
+    color: white !important;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .textarea-control {
+        grid-column: 1 / span 3;
+    }
+}

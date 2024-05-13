@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <title>SIGNUP</title>
+    <script src="/scripts/signup.js"></script>
+</head>
+
+<body>
+    <div class="container-1">
+        <form class="form-container" autocomplete="off" action="/signupAction"
+            onsubmit="return formValidations()" method="post">
+            <h2>SignUp</h2>
+             <!-- Radio Buttons for SignUp Options -->
+            <div class="radio-group">
+                <p class="text-left">Signing Up As: </p>
+            </div>
+            <div class="radio-group2 mt-3 mb-4">
+                <div class="row">
+                    <div class="col-md-6"><label class="radio"> <input type="radio" id="serviceSeeker" name="service" value="Service Seeker" checked> <span>Service Seeker</span></label></div>
+                    <div class="col-md-6 mcol"><label class="radio"> <input type="radio" id="serviceProvider" name="service" value="Service Provider"> <span>Service Provider</span> </label></div>
+                </div>
+            </div>
+           
+            <div style="color: white;text-align: center;"><%=message%></div>
+            <!-- Full Name field -->
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Full Name</label>
+                <span class="line"></span>
+            </div>
+
+            <!-- User Name field -->
+            <div class="input-group">
+                <input type="text" name="uname" required>
+                <label>User Name</label>
+                <span class="line"></span>
+            </div>
+
+            <!-- Email field -->
+            <div class="input-group">
+                <input type="email" name="emailId" id="email" required>
+                <label>Email</label>
+                <span class="line"></span>
+            </div>
+            <div id="emailError" style="color: white;text-align: center;"></div>
+
+            <!-- Password field -->
+            <div class="input-group">
+                <input type="password" name="pass" id="password" required>
+                <label>Password</label>
+                <span class="line"></span>
+            </div>
+            <div id="pwdError" style="color: white;text-align: center;"></div>
+            <div class="input-group">
+                <input type="password" name="pass" id="cnfrmpassword" required>
+                <label>Confirm Password</label>
+                <span class="line"></span>
+            </div>
+            <div id="pwdError2" style="color: white;text-align: center;"></div>
+
+            <!-- Terms and Conditions checkbox -->
+            <div class="remember-me">
+                <input type="checkbox" id="agree-terms" required>
+                <p>I agree to the <a href="/T&C-PP">Terms and Conditions</a></p>
+            </div>
+
+            <!-- Signup button to submit request -->
+            <button type="submit">SignUp</button>
+        </form>
+
+        <!-- Signup button moved inside the container -->
+        <div class="login">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

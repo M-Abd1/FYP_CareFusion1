@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/complain.css">
+    <title>Complain</title>
+</head>
+<body>
+    <div class="container">
+        <form class="form-container" autocomplete="off" action="/complaiaction" method="post">
+            <h2>Complaint Form</h2>
+            <!-- Name field -->
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Name</label>
+                <span class="line"></span>
+            </div>
+            <!-- Email field -->
+            <div class="input-group">
+                <input type="email" name="email" required>
+                <label>Email</label>
+                <span class="line"></span>
+            </div>
+            <!-- Phone number field -->
+            <div class="input-group">
+                <input type="tel" name="phone" required>
+                <label>Phone</label>
+                <span class="line"></span>
+            </div>
+            <!-- Service name field -->
+            <div class="input-group">
+                <input type="text" name="service" required>
+                <label>Service Name</label>
+                <span class="line"></span>
+            </div>
+            <!-- Complaint field -->
+            <div class="input-group">
+                <input type="text" name="complain" required>
+                <label>Complain</label>
+                <span class="line"></span>
+            </div>
+            <!-- Submit button -->
+            <button type="submit">Submit</button>
+            
+        </form>
+    </div>
+</body>
+</html>

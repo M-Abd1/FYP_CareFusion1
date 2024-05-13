@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Services </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/css/services/style.css" rel="stylesheet">
+    <script src="/scripts/services.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/services/Logo.png" width="220" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center " id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white  p-2" aria-current="page" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-2 " href="#">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-2" href="#scrollspyHeading1">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#">CONTACT</a>
+                    </li>
+                    <%  if (user === "Service Seeker") { %>
+                    <li class="nav-item">
+                      <a href="/seeker/findWorker" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2">Find ServiceProviders</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="Home" class="banner">
+        <div class="container px-4 align-items-center justify-content-center">
+            <div class="text-center text-white">
+                <p>
+                    Embark on a journey of convenience and excellence with our unparalleled services. 
+                    From delicious cooking adventures to perfectly clean and comfortable homes, personalized fitness guidance to transformative beauty services,
+                    our diverse range of offerings is tailored to meet your every need. Whether you're in search of culinary delights, a pristine home environment,
+                    fitness expertise, or a beauty transformation, we have the perfect solution for you.
+                </p>
+                <p>
+                    But we're more than just a service provider – we're a thriving community. For talented individuals eager to showcase their skills,
+                    our platform offers a seamless avenue to post and promote services. Join our vibrant community, 
+                    broaden your horizons, and let your unique abilities shine.
+                </p>
+                <p>
+                    At our core, we are dedicated to forging meaningful connections between service seekers and providers. 
+                    Our commitment to a reliable, straightforward, and rewarding process ensures that you can explore endless possibilities with confidence.
+                    Unlock a world of exceptional services, and let us be the bridge to extraordinary experiences delivered directly to your door. 
+                    Your satisfaction is our mission, and your journey with us is bound to be nothing short of exceptional.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="text-center mt-3 text-white ">
+        <h5 class="animate-heading">Our Services</h5>
+    </div>
+
+    <div class="mt-3 image-container">
+        <div class="image-item">
+            <a href="/services/chef" class="img-link"><img src="/images/services/cook.png" alt="Chef Services"></a>
+            <p class="image-text fw-bold">Chef Services</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/gym" class="img-link"><img src="/images/services/gym.png" alt="Gym Training"></a>
+            <p class="image-text fw-bold">Gym Training</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/tutor" class="img-link"><img src="/images/services/tutor.png" alt="Tutoring"></a>
+            <p class="image-text fw-bold">Tutoring</p>
+        </div>
+    </div>
+
+    <div class="image-container mt-4">
+        <div class="image-item">
+            <a href="/services/maid" class="img-link"><img src="/images/services/maid.png" alt="Maid Services"></a>
+            <p class="image-text fw-bold">Maid Services</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/makeUp" class="img-link"><img src="/images/services/mk.jpg" alt="Makeup & Skin Care"></a>
+            <p class="image-text fw-bold">Makeup & Skin Care</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/babySitter" class="img-link"><img src="/images/services/babysiter.jpg" alt="Baby Sitter"></a>
+            <p class="image-text fw-bold">Baby Sitter</p>
+        </div>
+    </div>
+
+    <div class="image-container mt-6">
+        <div class="image-item">
+            <a href="/services/eventPlanner" class="img-link"><img src="/images/services/EP.jpg" alt="Event Planner"></a>
+            <p class="image-text fw-bold">Event Planner</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/architect" class="img-link"><img src="/images/services/archi.jpg" alt="Build Your House with Architect"></a>
+            <p class="image-text fw-bold">Build Your House with Architect</p>
+        </div>
+        <div class="image-item">
+            <a href="/services/architect" class="img-link"><img src="/images/services/archi.jpg" alt="Consult with best physicians"></a>
+            <p class="image-text fw-bold">Consult with best physicians</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row mt-3 p-4">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 footer-heading">
+                <img src="/images/services/Logo.png" width="200" class="mt-3" alt="Footer Logo">
+                <p class="text-white">Care Fusion, Copyright &copy; 2023 All rights reserved</p>
+                <p class="text-white mt-1">At Care Fusion, we transcend the conventional bounds of a service platform. Our mission goes beyond mere connection; we directly link individuals to dedicated disability support workers and aged care professionals.</p>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2  p-3 footer-heading">
+                <ul>
+                    <li class="text-secondary fw-bold">Links</li>
+                    <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Team</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+                <ul>
+                    <li class="text-secondary fw-bold">Getting Started</li>
+                    <li><a href="#" class="text-white text-decoration-none">Login</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Signup</a></li>
+                    <li><a href="/seeker/postJob" class="text-white text-decoration-none">Post your care needs</a></li>
+                    <li><a href="/provider/provProfile" class="text-white text-decoration-none">Become a care Provider</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+                <ul>
+                    <li class="text-secondary fw-bold">Important</li>
+                    <li><a href="#" class="text-white text-decoration-none">About</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Complaints Policy</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Terms & conditions</a></li>
+                </ul>
+            </div>  
+        </div>
+
+        <div class="row ms-5">
+            <h4 class="text-white text-uppercase fs-5">Follow us on</h4>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <a href="#"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" width="30px" alt="Facebook"></a>
+                <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/018/930/413/non_2x/instagram-logo-instagram-icon-transparent-free-png.png" width="50px" alt="Instagram"></a>
+                <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/027/395/710/small/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" width="35px" alt="Twitter"></a>
+                <a href="#"><img src="https://www.freeiconspng.com/uploads/whatsapp-logo-background-29.png" width="50px" alt="WhatsApp"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/scripts/services.js"></script> -->
+</body>
+</html>

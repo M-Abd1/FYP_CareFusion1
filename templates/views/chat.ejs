@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name ="vireport" content="width=device-width, intial-scale=1.0">
+    <title> Chat Us </title>
+    <link rel="stylesheet" href="/css/chat.css">
+
+</head>
+
+<body>
+    <section class = "chat-section">
+    <div class = "brand">
+        <img height="40" src="/images/chat.jpeg" alt="">
+        <h1>ChatFusion</h1>
+    </div>
+    <text id ="name" nme = <%uname%>>
+        </text>
+    <div class="message-area">
+    </div>
+    <div>
+        <textarea id="textarea" cols="30" rows = "1" placeholder="Write a message..."></textarea>
+    </div>
+</section>
+    
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src="/scripts/chat.js"></script>
+    <script>
+        let nme = '<%=uname%>';
+        if (!nme || nme.trim() === '') {
+        nme = "Anonymous";
+}
+    </script>
+</body>
+
+</html>
+
+

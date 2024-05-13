@@ -1,0 +1,121 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/images/postJob.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+
+.container {
+    max-width: 950px;
+    padding: 50px;
+    margin: 0px auto;
+}
+.hone{
+    margin-bottom: 10px;
+}
+.text-container {
+    color: white;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+.apply-box {
+    max-width: 1200px;
+    padding: 40px;
+    margin: 0px auto;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+.form-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    gap: 20px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+}
+.form-control{
+    color: white;
+}
+
+input,
+select,
+textarea {
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #605d5d;
+}
+
+input:focus {
+    outline-color: royalblue;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: royalblue;
+    border: transparent solid 8px;
+    border-radius: 8px;
+    color: white;
+}
+
+button:hover {
+    background: #415fbd;
+    border: 9px solid royalblue;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.textarea-control {
+    grid-column: 1 / span 2;
+    color: white;
+}
+
+.textarea-control textarea {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .textarea-control {
+        grid-column: 1 / span 3;
+    }
+}

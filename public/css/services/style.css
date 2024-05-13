@@ -1,0 +1,217 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    font-size: 18px; 
+    line-height: 1.6;
+    margin-bottom: 30px;
+    background:#001529;
+    position: relative;
+    height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.banner p{
+    color:white;
+    text-align: justify;
+}
+.banner .text-center {
+    margin-top: 120px;
+}
+/* Navigation Bar */
+.login-btn {
+    background: #626ee3;
+}
+
+.login-btn:hover {
+    background-color: #75aace;
+}
+
+.navbar.scrolled {
+    background-color: #111618 !important;
+    transition: background-color 0.3s ease;
+}
+.text-center h5 {
+    font-size: 24px;
+    color:#111618;
+    font-weight: bold;
+} 
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image-item {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 5cap;
+    margin-right: 5cap;
+}
+
+.image-text {
+    color: #001529;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.common-btn {
+    width: 150px; /* Adjust the width as needed */
+    margin-top: 10px;
+}
+/* Sub heading */
+.sub-heading {
+    color: rgb(78, 76, 76);
+}
+
+/* Text Animation */
+
+.animate-heading{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 60%;
+    color: #001529;
+    opacity: 0.8;
+    &:hover::after{
+        width: 10%;
+    }
+    &::after{
+        position: absolute;
+        content: " ";
+        width: 0;
+        height: 5px;
+        top: 150%;
+        left: 45%;
+        background-color:#c7d7e6;
+        transition: all 0.2s;
+
+    }
+}
+.animate-heading2
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 60%;
+    color: #001529;
+    opacity: 0.8;
+    &:hover::after{
+        width: 10%;
+    }
+    &::after{
+        position: absolute;
+        content: " ";
+        width: 0;
+        height: 5px;
+        top: 150%;
+        left: 0;
+        background-color:#c7d7e6;
+        transition: all 0.2s;
+
+    }
+}
+
+/* Banner */
+
+.banner h1,
+.banner h4,
+.banner-btn {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.banner-btn a {
+    color: #fff;
+}
+
+.banner-head {
+    font-size: 2.5em; 
+}
+
+
+
+.banner h4 {
+    font-size: 1.6em;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner-btn {
+    background: rgba(255, 255, 255, 0.37);
+    border-color: whitesmoke;
+}
+
+.banner-btn:hover {
+    background-color: #788de2;
+    border-color: #7a37b5;
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px; /* Adjust the margin-top value as needed */
+    margin-bottom: 30px;
+}
+
+.image-item {
+    flex-basis: calc(25% - 10px);
+    margin-bottom: 20px;
+}
+
+.image-item img {
+    width: 70%;
+    height: auto;
+    cursor: pointer;
+    padding-left: 5px;
+}
+.image-item:hover img {
+    transform: scale(1.1); /* Add scaling effect on hover */
+}
+.img-link{
+    text-decoration: none;
+    color: #788de2;
+}
+.image-text {
+    color: #003262;
+}
+
+
+/* Footer */
+footer {
+    background-color: #2e2931;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 3px;
+}
+
+.banner-head {
+    font-size: 4em; /* Adjust the font size as needed */
+}
+
+@media (max-width: 768px) {
+    .login-btn {
+        width: 20%;
+        margin-top: 10px;
+    }
+}

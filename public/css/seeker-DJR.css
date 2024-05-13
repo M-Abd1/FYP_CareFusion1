@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*body {
+    background: whitesmoke;
+    background-size: cover;
+     width: 100%;
+    height: 100vh;
+}
+/*Navigation Bar */
+
+.login-btn
+{
+    background: #626ee3;
+}
+.login-btn:hover
+{
+    background-color:#8993f0;
+}
+.navbar.scrolled
+{
+    background-color:#111618 !important;
+    transition: background-color 0.3s ease;
+}
+
+
+.unknown {
+  margin-bottom: 130px;
+  margin-top:230px;
+  text-align: center;
+  }
+  .known {
+  margin-bottom: 20px;
+  margin-top:140px;
+  text-align: center;
+  }
+
+    /*
+    .card {
+        width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: left;
+        position: relative;
+      }
+      
+      .card:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        z-index: -1;
+        border-radius: 15px;
+        background: linear-gradient(90deg, hsla(152, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+      }
+      
+      .header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      
+      .header h2 {
+        color: #333;
+        margin-bottom: 5px;
+      }
+      
+      .body {
+        margin-top: 20px;
+      }
+      
+      .body h3 {
+        color: #555;
+        margin-bottom: 10px;
+      }
+      
+      .body p {
+        color: #777;
+        margin-bottom: 5px;
+      }
+      
+      .apply-btn {
+        background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #chat-btn {
+  width: 40px;
+  height: 28px;
+  background-color: #62cfc1;
+  border-radius: 4px;
+  position: relative;
+}
+#chat-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 10px;
+    bottom: -10px;
+    border-left: 10px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 10px solid #62CFC1;
+}
+      .apply-btn:hover {
+        background: linear-gradient(90deg, hsla(217, 100%, 40%, 1) 0%, hsla(186, 100%, 59%, 1) 100%);
+      }
+      */
+      .card {
+        width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+        background-color: white;
+      }
+      
+      
+      .header {
+        padding: 20px;
+      }
+      
+      .header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      
+      .body {
+        padding: 20px;
+      }
+      
+      .details-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      
+      .detail {
+        width: calc(50% - 5px); /* Adjust according to spacing */
+      }
+      
+      .detail h3 {
+        margin-bottom: 5px;
+      }
+      
+      .apply-btn {
+        background: linear-gradient(90deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+      
+      .apply-btn:hover {
+        background: linear-gradient(90deg, hsla(154, 100%, 66%, 1) 0%, hsla(234, 100%, 73%, 1) 50%, hsla(288, 100%, 71%, 1) 100%);
+      }
+      
+      
+
+/*Footer */
+
+footer{
+    background-color: #111618 ;
+    overflow: hidden;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 3px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px)
+ {
+    .login-btn {
+        width: 20%;
+        margin-top: 10px;
+    }
+    
+
+}
+

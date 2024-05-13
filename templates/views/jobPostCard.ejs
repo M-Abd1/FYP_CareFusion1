@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: hsla(141, 54%, 86%, 1);
+            background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+            background: -moz-linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+            background: -webkit-linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAEFD7", endColorstr="#F5BFD7", GradientType=1 );
+        }
+
+        .card {
+            width: 80%;
+            max-width: 800px; /* Adjust the maximum width of your card */
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color:#001529;
+        }
+
+        .card-title {
+            padding: 20px;
+            font-size: 36px; /* Increased font size for the title */
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px; /* Increased font size for the subtitles */
+            color:#001529;
+            margin-bottom: 10px;
+            padding: 0 20px;
+            font-weight:700;
+        }
+
+        .text-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: none; /* Removed border from text lines */
+        }
+
+        .text-field {
+            flex: 1;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bold-text {
+            font-weight: bold;
+            margin-right: 5px;
+            font-size: 18px; /* Increased font size for bold text in text fields */
+            color: #2c3e50; /* Dark gray color for bold text */
+        }
+
+        .normal-text {
+            flex: 1;
+            font-size: 18px; /* Increased font size for normal text in text fields */
+            color: #2c3e50; /* Dark gray color for normal text */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            padding: 20px;
+        }
+
+        .button {
+            width: 150px; /* Adjust button width */
+            padding: 15px;
+            background-color: #626ee3; /* Green color for the button */
+            color: #fff; /* White color for button text */
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+        }
+        .button:hover{
+            background-color:#8993f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1 class="card-title">JOB POST</h1>
+
+    <div class="subtitle">Posted By</div>
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Name:  </span>
+            <span class="normal-text"><%=fullname%></span>
+        </div>
+        <div class="text-field">
+            <span class="bold-text">Email:   </span>
+            <span class="normal-text"><%=email%></span>
+        </div>
+    </div>
+    
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Address:   </span>
+            <span class="normal-text"><%=address%></span>
+        </div>
+        <div class="text-field">
+            <span class="bold-text">City:   </span>
+            <span class="normal-text"><%=hometown%></span>
+        </div>
+    </div>
+    
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Pin Code:  </span>
+            <span class="normal-text"><%=pincode%></span>
+        </div>
+        
+    </div>
+
+    <div class="subtitle">Requirements</div>
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Skill Required:   </span>
+            <span class="normal-text"><%=skill%></span>
+        </div>
+        <div class="text-field">
+            <span class="bold-text">Gender:   </span>
+            <span class="normal-text"><%=gender%></span>
+        </div>
+    </div>
+    
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Date:   </span>
+            <span class="normal-text"><%=date%></span>
+        </div>
+        <div class="text-field">
+            <span class="bold-text">Language:   </span>
+            <span class="normal-text"><%=language%></span>
+        </div>
+    </div>
+    <div class="text-line">
+        <div class="text-field">
+            <span class="bold-text">Detail:   </span> 
+            <span class="normal-text"><%=detail%></span>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a  onclick="window.location.href = `/seeker/jobPostCard?fullname=${'<%=fullname%>'}&email=${'<%=email%>'}&address=${'<%=address%>'}&gender=${'<%=gender%>'}&hometown=${'<%=hometown%>'}&detail=${'<%=detail%>'}&skill=${'<%=skill%>'}&date=${'<%=date%>'}&language=${'<%=language%>'}&pincode=${<%=pincode%>}`" <button class="button">Post</button></a>
+    </div>
+    
+</div>
+<script>
+    function call() {
+    }
+</script>
+</body>
+</html>

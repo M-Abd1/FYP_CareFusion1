@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maid</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <!-- Your CSS -->
+    <link href="/css/servicePages/services-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1517840035140-2d32eeb59190?q=80&w=1458&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="First Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">ABOUT SERVICE</h5>
+                    <p style="text-align: justify;">Experience the ultimate convenience with our top-notch maid service tailored to meet your household needs.
+                         Our skilled and trustworthy maids bring professionalism and efficiency to every task, ensuring a spotless and organized home.
+                          Enjoy more free time and peace of mind as our team takes care of chores like cleaning, organizing, and maintaining a pristine living space.
+                           We prioritize your comfort and well-being, providing reliable and thorough cleaning services. With flexible scheduling,
+                            you can customize the maid service to align with your lifestyle. Trust us to create a hygienic and welcoming home environment, allowing you to focus on what matters most. 
+                        Choose our maid service for a hassle-free and immaculate living space.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Second Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">Terms And Policy</h5>
+                    <ol style="text-align: justify;">
+                        <li><strong>Service Scope:</strong> Our maid service covers general cleaning tasks, organizing, and maintaining cleanliness in living spaces.</li>
+                        <li><strong>Supplies and Equipment:</strong> Clients are responsible for providing necessary cleaning supplies and equipment unless otherwise agreed upon.</li>
+                        <li><strong>Security and Safety:</strong> We prioritize the security of your home. Our maids undergo thorough background checks, ensuring reliability and trustworthiness.</li>
+                        <li><strong>Payment Terms:</strong> Payment is due on the agreed-upon schedule. Late payments may incur additional charges.</li>
+                    </ol>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Third Slide">
+                <div class="carousel-caption glass">
+                    <p style="text-align: justify;">Availing our maid service ensures a seamless and stress-free experience in maintaining a clean and organized home.
+                         Our professional maids bring a wealth of expertise, delivering exceptional cleaning services with meticulous attention to detail. 
+                         We prioritize your convenience by offering flexible scheduling and personalized cleaning plans tailored to your specific needs.
+                          Trust and reliability are at the core of our service, as our maids undergo thorough background checks to guarantee your peace of mind.
+                           Beyond just cleanliness, our service contributes to a healthier living environment by eliminating dust, allergens, and bacteria.
+                            With a commitment to consistent quality, we strive to exceed your expectations, providing you with a spotless and welcoming home.
+                             Choose our maid service for a time-efficient, reliable, and stress-reducing solution to your cleaning needs.
+                    </p>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#availNowModal">Avail Service</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Avail Now Modal -->
+    <div class="modal fade" id="availNowModal" tabindex="-1" aria-labelledby="availNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="availNowModalLabel">Avail Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body center-text">
+                    <form id="availform" action="/services/availFormAction" method="post"  novalidate>
+                        <input type="hidden" name="serviceType" value="maid"> <!-- Set the service type dynamically -->
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                            <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" 
+                                   min="0" max="100000" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceDate" class="form-label">Service Date</label>
+                            <input type="date" class="form-control" id="serviceDate" name="serviceDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceTime" class="form-label">Service Time</label>
+                            <select class="form-select" id="serviceTime" name="serviceTime" required>
+                                <option value="7am-10am">7am - 10am</option>
+                                <option value="10am-1pm">10am - 1pm</option>
+                                <option value="1pm-4pm">1pm - 4pm</option>
+                                <option value="4pm-7pm">4pm - 7pm</option>
+                                <option value="7pm-8pm">7pm - 8pm</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // Custom JavaScript for form validation
+        (function () {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+
+</html>

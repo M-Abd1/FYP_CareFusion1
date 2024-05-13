@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.unknown {
+    margin-bottom: 130px;
+    margin-top:230px;
+    text-align: center;
+    }
+    .known {
+    
+    text-align: center;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1000px;
+        padding: 0px;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    
+    
+    
+    }
+    .hone{
+        margin-bottom: 50px;
+        color:#001529d5 ;
+    }
+    
+    
+    .apply-box {
+        max-width: 950px;
+       
+        margin: auto;
+        margin-top: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        height: 100%;
+        background: rgb(253, 253, 253);
+    
+    }
+    
+    .title {
+        font-size: 20px;
+        color: white;
+        margin-top: 10px;
+    
+    
+    }
+    
+    .form-container {
+        margin-top: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+        gap: 20px;
+        padding: 45px;
+    
+    }
+    
+    .formm-control {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .label {
+        margin-top: 5px;
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: white;
+    }
+    .formm-control.label{
+        color: black;
+    }
+    
+    
+    .formm-control input {
+        padding: 6px 10px;
+        border-color: #111618;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        font-size: 15px;
+        background-color: rgba(209, 233, 244, 0.917);
+        color: #242222;
+    }
+    
+    .formm-control:focus {
+        outline-color: rgb(49, 50, 52);
+    }
+    
+    
+    
+    
+    
+    .textarea-control {
+        grid-column: 1 / span 2;
+        color: white;
+    }
+    
+    .textarea-control textarea {
+        width: 100%;
+    }
+    
+    @media (max-width: 600px) {
+        .textarea-control {
+            grid-column: 1 / span 3;
+        }
+    }

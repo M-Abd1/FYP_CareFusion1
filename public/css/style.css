@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(4,28,68);
+    background: linear-gradient(120deg, rgba(4,28,68,1) 18%, rgba(9,164,219,1) 96%);
+    background-size: cover;
+}
+
+.container {
+    width: 405px;
+    height: 450px;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.container-1 {
+    width: 450px;
+    height: 95vh;
+    padding: 10px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+form h2 {
+    color:white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    position: relative;
+    width: 320px;
+    margin-top: 20px;
+}
+
+.input-group input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    color:white;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    padding: 20px 0 10px;
+    color: #c7d7e6;
+    pointer-events: none;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.input-group input:valid + label,
+.input-group input:focus + label {
+    color: #fff;
+    transform: translateX(0) translateY(-34px);
+    font-size: 12px;
+}
+
+.input-group .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    transition: height 0.5s;
+    pointer-events: none;
+}
+
+.input-group input:valid + .line,
+.input-group input:focus + .line {
+    height: 100%;
+}
+
+.radio-group {
+    color: #c7d7e6;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.radio-group2{
+    margin-top: 10px;
+}
+
+.radio-group2 label {
+    display: block;
+    color: #c7d7e6;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.radio-group2 .row {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group2 .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    color: #c7d7e6;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.radio input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio span {
+    margin-right: 10px;
+}
+
+.radio input[type="radio"]:checked+span {
+    color: white;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: #c7d7e6;
+}
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.remember-me label[for="remember-me"] {
+    font-size: 14px;
+    color: #c7d7e6;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    font-weight: 500;
+}
+.remember-me p a {
+    color:#c7d7e6;
+    text-decoration: none;
+}
+
+.remember-me input[type="checkbox"]:checked + label[for="remember-me"] {
+    color:white;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.forgot-password a {
+    font-size: 14px;
+    color: #c7d7e6;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+form button {
+    width: 100%;
+    height: 44px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    background:#7cbcf8ab;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: rgba(255, 255, 255, 0.39);
+}
+
+.login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login p {
+    font-size: 14px;
+    color: #c7d7e6;
+}
+
+.login p a {
+    color:white;
+    text-decoration: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Adjusted max-width for smaller screens */
+    }
+}

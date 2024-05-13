@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs Posted</title>
+    <link rel="stylesheet" href="/css/seeker-DJ.css">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<%- include('seeker-navigation.ejs') %>
+
+<% if(job.length == 0) { %>
+<h3 class="unknown"><b>You have no posted any job yet</b></h3>
+<% } else { %>
+    <h3 class="known"><b>Jobs Posted</b></h3>
+    
+
+      <!--New End-->
+    <% for (var x = 0; x < job.length; x++) { %>
+        
+	
+        <div class="container">
+
+            <div class="apply-box">
+                <div style="display: inline-block; background-color: red; border: 2px solid red; border-radius: 5px; padding: 5px;">
+                    <p style="color: white; margin: 0;"><%= job[x]["status"] %></p>
+                </div>
+                      <div class="form-container">
+	      <div class="formm-control">
+                            <h4><b>Service Needed: </b> <%= job[x]["skill"] %></h4>
+                        </div>
+	       <div class="formm-control">
+                            
+                        </div>
+                        <div class="formm-control">
+                            <p><b>Name : </b> <%= job[x]["fullname"] %></p>
+                        </div>
+                        <div class="formm-control">
+                            <p><b>Email :</b> <%= job[x]["email"] %></p>
+                        </div>
+                        <div class="formm-control">
+                            <p><b>Gender :</b> <%= job[x]["gender"] %></p>
+                        </div>
+	        <div class="formm-control">
+                            <p><b>Language :</b> <%= job[x]["language"] %></p>
+                        </div>
+                        <div class="formm-control">
+                            <p><b>Provider needed on: </b> <%= job[x]["date"].toISOString().split('T')[0] %></p>
+                        </div>
+	        <div class="formm-control">
+                            <p><b>Address :</b> <%= job[x]["address"] %></p>
+                        </div>
+	        <div class="formm-control">
+                            <p><b>Description about Service:</b> <%= job[x]["detail"] %></p>
+                        </div>
+	        <div class="formm-control">
+                            <p></p>
+                        </div>
+                        <% if (job[x]["status"] == "Unassigned") { %>
+                            <div class="formm-control">
+                                <a href="/seeker/seekerDJR?reply=<%= job[x]["reply"] %>&skill=<%= job[x]["skill"] %>&id=<%= job[x]["_id"] %>&status=Unassigned" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2 " style="margin-right: 250px;">Request: <%= job[x]["reply"].length %></a>
+                                        </div>
+                        <% } else { %>
+                        <div class="formm-control">
+                            <a href="/seeker/seekerDJR?reply=<%= job[x]["reply"] %>&skill=<%= job[x]["skill"] %>&id=<%= job[x]["_id"] %>&status=Assigned" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2 " style="margin-right: 250px;">See Profile</a>
+                                    </div>
+                        <% } %>
+                        <% if (job[x]["status"] != "Assigned") { %>
+                        <div class="formm-control">
+                            <a href="/seeker/seekerDJD?job=<%= job[x]["_id"] %>" class="btn btn-danger border-0 fw-bold mt-2 px-4 login-btn rounded-2 " style="margin-left: 250px;">Delete</a>
+                                    </div>
+                                    <% } %>
+                    </div>
+                    
+                    </div>
+               
+            </div>
+        </div>
+<%}}%>
+
+
+<!--Footer-->
+
+<%- include('seeker-footer.ejs') %>     
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+

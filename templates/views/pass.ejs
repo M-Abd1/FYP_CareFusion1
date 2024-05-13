@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <title>RESET PASSWORD</title>
+    <script>
+        function formValidations()
+        {
+            var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('cnfrmpassword').value;
+  document.getElementById("pwdError").innerHTML = "";
+  if (password.length < 8) {
+    document.getElementById("pwdError").innerHTML = "Password must be at least 8 digit long!!";
+    return false;
+  }
+  if (confirmPassword.length < 8 || confirmPassword !== password) {
+    document.getElementById("pwdError2").innerHTML = "Password doesn't matches!!";
+    return false;
+  }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="emailform" class="container">
+        <form class="form-container" action="/resetpassword" autocomplete="off"
+        onsubmit="return formValidations()" method="post">
+            <h2>Reset Password</h2>
+            <input type="hidden" id="email" name="email" value=<%=email%>>
+            
+            <!-- Password field -->
+            <div class="input-group">
+                <input type="password" name="pass" id="password" required>
+                <label>Password</label>
+                <span class="line"></span>
+            </div>
+            <div id="pwdError" style="color: white;text-align: center;"></div>
+            <div class="input-group">
+                <input type="password" name="pass" id="cnfrmpassword" required>
+                <label>Confirm Password</label>
+                <span class="line"></span>
+            </div>
+            <div id="pwdError2" style="color: white;text-align: center;"></div>
+
+            
+            <!-- submit button to send reset request -->
+            <button type="submit" value="submit">Submit</button>
+            <div style="color:white;text-align: center;"><%=message%></div>
+            <!-- login link -->
+            <div class="login">
+                <p>Remember your password? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

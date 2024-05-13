@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babysitter</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <!-- Your CSS -->
+    <link href="/css/servicePages/services-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="carouselExampleCaptions" class="carousel slide" >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1679678691010-894374986c54?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="...">
+        <div class="carousel-caption glass">
+          <h5 class="fs-3">ABOUT SERVICE</h5>
+          <p>We prioritize your well-being by offering a comprehensive range of healthcare services tailored to your needs. Our online platform connects you with experienced healthcare professionals who are dedicated to providing personalized care and support. Whether you require routine check-ups, specialized treatments, or expert medical advice, our team is here to assist you every step of the way.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="...">
+        <div class="carousel-caption glass">
+            <h5 class="fs-3">Terms And Policy</h5>
+        <ol style="text-align: justify;">
+            <li><strong>Appointment Scheduling:</strong>Schedule healthcare services online or through customer service, contingent upon availability</li>
+            <li><strong>Service Area:</strong> Healthcare services available in designated areas; additional fees may apply for locations beyond the specified range.</li>
+            <li><strong>Service Duration:</strong> Specific appointment times outlined; clients are advised to plan accordingly for the necessary duration.</li>
+            <li><strong>Patient Preparedness:</strong> Ensure a comfortable and conducive environment for healthcare services; inform healthcare providers of any allergies or specific needs in advance.</li>
+            <li><strong>Quality Assurance:</strong> Committed to delivering high-quality healthcare services; clients unsatisfied with the service are encouraged to contact customer service within 48 hours for resolution.</li>
+        </ol>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="...">
+        <div class="carousel-caption glass">
+          <p style="text-align: justify;">Choosing our healthcare service provides a reliable solution for individuals seeking dedicated and professional medical care. With flexible scheduling options, we cater to your specific needs, whether it's for a routine check-up or a specialized treatment. Our commitment to safety is paramount; our healthcare providers undergo rigorous screening and training, ensuring you receive care from capable and trustworthy hands. Beyond safety, our service goes the extra mile by offering comprehensive and personalized healthcare plans to address your specific health needs. Receive regular updates for peace of mind, staying informed about your health and well-being. Trust in our team of skilled professionals who are well-prepared to handle various medical situations, providing a secure and nurturing environment for your care. Experience the convenience of healthcare services brought directly to you, allowing you flexibility and comfort in managing your health responsibilities.
+        </p>
+        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#availNowModal">Avail Service</button>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+
+    <!-- Avail Now Modal -->
+    
+    <div class="modal fade" id="availNowModal" tabindex="-1" aria-labelledby="availNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-secondary" id="availNowModalLabel">Avail Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body center-text">
+                    <form id="availform" action="/services/availFormAction" method="post"  novalidate>
+                        <input type="hidden" name="serviceType" value="baby-sitter"> <!-- Set the service type dynamically -->
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                            <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" 
+                                   min="0" max="100000" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceDate" class="form-label">Service Date</label>
+                            <input type="date" class="form-control" id="serviceDate" name="serviceDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceTime" class="form-label">Service Time</label>
+                            <select class="form-select" id="serviceTime" name="serviceTime" required>
+                                <option value="7am-10am">7am - 10am</option>
+                                <option value="10am-1pm">10am - 1pm</option>
+                                <option value="1pm-4pm">1pm - 4pm</option>
+                                <option value="4pm-7pm">4pm - 7pm</option>
+                                <option value="7pm-8pm">7pm - 8pm</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2" onclick="validateForm()">Get Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script>
+            function validateForm() {
+                var form = document.getElementById('availForm');
+                if (form.checkValidity()) {
+                    form.classList.add('was-validated');
+                } else {
+                    form.classList.remove('was-validated');
+                }
+            }
+        </script>
+</body>
+
+</html>

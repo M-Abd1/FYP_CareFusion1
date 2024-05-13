@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li>
+                <a href="/provider/dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/provider/profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="/provider/statistics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Assigned Jobs</span>
+                </a>
+            </li>
+            <li>
+                
+                <li>
+                    <a href="/provider/completejob">
+                        <i class="fas fa-star"></i>
+                        <span>Complete Jobs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/provider/assignJobs">
+                        <i class="fas fa-star"></i>
+                        <span>Suggested Jobs</span>
+                    </a>
+                </li>
+            </ul>
+        <ul class="menu">
+            <li class="logout"><a href="/signout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <h2>Dashboard</h2>
+            </div>
+            
+        </div>
+        <div class="card--container">
+            <h3 class="main--title">Invoices and Payments</h3>
+            <div class="card--wrapper">
+                <div class="payment--card light-red">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Recieve Amount</span>
+                            <span class="amount-value">$500.00</span>
+                        </div>
+                        <i class="fas fa-dollar-sign icon"></i>
+                    </div>
+                    <span class="card-detail">**** **** **** **** 3484</span>
+                </div>
+                <div class="payment--card light-pruple">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Pending amount to admin</span>
+                            <span class="amount-value">$70.00</span>
+                        </div>
+                        <i class="fas fa-list icon dark-purple"></i>
+                    </div>
+                    <span class="card-detail">**** **** **** **** 4567</span>
+                </div>
+                <div class="payment--card light-green">
+                    <!-- Third payment card content -->
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Pending Requests</span>
+                            <span class="amount-value">25</span>
+                        </div>
+                        <i class="fas fa-users icon dark-green"></i>
+                    </div>
+                    <span class="card-detail">Seeker waiting for response</span>
+                </div>
+                <div class="payment--card light-blue">
+                    <!-- Fourth payment card content -->
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Pending services</span>
+                            <span class="amount-value">10</span>
+                        </div>
+                        <i class="fas fa-check-circle icon dark-blue"></i>
+                    </div>
+                    <span class="card-detail">pending services</span>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        // JavaScript code to toggle visibility of additional rows
+        document.addEventListener("DOMContentLoaded", function() {
+            var financeTable = document.getElementById("financeTable");
+            var showMoreLink = document.getElementById("showMoreLink");
+            var rows = financeTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+            var visibleRowCount = 5;
+            var totalRows = rows.length;
+
+            // Function to toggle visibility of additional rows
+            function toggleRows() {
+                for (var i = visibleRowCount; i < totalRows; i++) {
+                    rows[i].style.display = (rows[i].style.display === "none") ? "" : "none";
+                }
+                showMoreLink.textContent = (showMoreLink.textContent === "Show more") ? "Show less" : "Show more";
+            }
+
+            // Initial setup to hide additional rows
+            for (var i = visibleRowCount; i < totalRows; i++) {
+                rows[i].style.display = "none";
+            }
+
+            // Event listener for show more link
+            showMoreLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                toggleRows();
+            });
+        });
+    </script>
+</body>
+</html>

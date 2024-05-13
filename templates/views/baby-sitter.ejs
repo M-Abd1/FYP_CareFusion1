@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babysitter</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <!-- Your CSS -->
+    <link href="/css/servicePages/services-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1505679208891-9ab12ee61dc1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="First Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">ABOUT SERVICE</h5>
+                    <p style="text-align: justify;">Our babysitter services provide professional care with experienced caregivers dedicated to your child's well-being.
+                         Offering flexible scheduling, our screened and trained sitters ensure safety and engage your child in age-appropriate activities.
+                          Safety is paramount, with caregivers well-versed in emergency protocols. Experience peace of mind while staying informed through regular
+                         communication and updates on your child's activities..</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1508009219918-7d528f269841?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Second Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">Terms And Policy</h5>
+                    <ol style="text-align: justify;">
+                        <li><strong>Service Booking:</strong> Schedule babysitter services online or through customer service, contingent upon availability.</li>
+                        <li><strong>Service Area:</strong> Babysitter services available in designated areas; additional fees may apply for locations beyond the specified range.</li>
+                        <li><strong>Service Duration:</strong> Specific service times outlined; clients are advised to plan accordingly for the necessary duration.</li>
+                        <li><strong>Client Preparedness:</strong> Ensure a clean and well-lit space for babysitting services; inform caregivers of any allergies or specific needs in advance.</li>
+                        <li><strong>Quality Assurance:</strong> Committed to delivering high-quality babysitting services; clients unsatisfied with the service are encouraged to contact customer service within 48 hours for resolution.</li>
+                    </ol>
+                                        
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1475716220633-d3f9c6073750?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Third Slide">
+                <div class="carousel-caption glass">
+                    <p style="text-align: justify;">Choosing our babysitter service provides a reliable solution for parents seeking 
+                        dedicated and professional childcare. With flexible scheduling options, we cater to your specific needs, 
+                        whether it's for a few hours or an entire day. Our commitment to safety is paramount our
+                         babysitters undergo rigorous screening and training, ensuring your child is in capable and trustworthy hands.
+                          Beyond safety, our service goes the extra mile by offering engaging and age-appropriate activities to keep your child stimulated and happy.
+                           Receive regular updates for peace of mind, staying informed about your child's activities and well-being. Trust in our team of skilled professionals
+                            who are well-prepared to handle various situations, providing a secure and nurturing environment for your child.
+                         Experience the convenience of childcare brought directly to your doorstep, allowing you flexibility and comfort in managing your daily responsibilities.
+                    </p>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#availNowModal">Avail Service</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Avail Now Modal -->
+    <div class="modal fade" id="availNowModal" tabindex="-1" aria-labelledby="availNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="availNowModalLabel">Avail Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body center-text">
+                    <form id="availform" action="/services/availFormAction" method="post"  novalidate>
+                        <input type="hidden" name="serviceType" value="baby-sitter"> <!-- Set the service type dynamically -->
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                            <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" 
+                                   min="0" max="100000" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceDate" class="form-label">Service Date</label>
+                            <input type="date" class="form-control" id="serviceDate" name="serviceDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceTime" class="form-label">Service Time</label>
+                            <select class="form-select" id="serviceTime" name="serviceTime" required>
+                                <option value="7am-10am">7am - 10am</option>
+                                <option value="10am-1pm">10am - 1pm</option>
+                                <option value="1pm-4pm">1pm - 4pm</option>
+                                <option value="4pm-7pm">4pm - 7pm</option>
+                                <option value="7pm-8pm">7pm - 8pm</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2" onclick="validateForm()">Get Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script>
+            function validateForm() {
+                var form = document.getElementById('availForm');
+                if (form.checkValidity()) {
+                    form.classList.add('was-validated');
+                } else {
+                    form.classList.remove('was-validated');
+                }
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INSURANCE</title>
+    <link rel="stylesheet" href="/css/jobview.css">
+     <!--Google Font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+     <!--Bootstrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="/scripts/jobview.js"></script>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/images/logo.png" width="220"></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center " id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white  p-2" aria-current="page" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white p-2" href="#">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white p-2" href="#About">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-white p-2" href="#">BLOGS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white p-2 text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Safety and Resilience
+                    </a>
+                    <ul class="dropdown-menu bg-light">
+                      <li><a class="dropdown-item  text-uppercase" href="#">Insurance</a></li>
+                      <li><a class="dropdown-item  text-uppercase" href="#">Complaints</a></li>
+                      <li><a class="dropdown-item  text-uppercase" href="#">Safety Measures</a></li>
+                    </ul>
+                  </li>
+                  <a href="/login" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-5">LOGIN</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+        <!--New Code-->
+
+        <% if(jobs.length == 0) { %>
+            <h3 class="unknown"><b>No job meets your skill..</b></h3>
+            <% } else { %>
+                <h3 class="known"><b>Jobs Posted</b></h3>
+                
+            
+                  <!--New End-->
+                <% for (var x = 0; x < jobs.length; x++) { %>
+                    
+                
+                    <div class="container">
+            
+                        <div class="apply-box">
+                            <div style="display: inline-block; background-color: red; border: 2px solid red; border-radius: 5px; padding: 5px;">
+                                <p style="color: white; margin: 0;"><%= jobs[x]["skill"] %></p>
+                            </div>
+                            <div class="form-container">
+                                    
+                       
+                                    <div class="formm-control">
+                                        <p><b>Name : </b> <%= jobs[x]["fullname"] %></p>
+                                    </div>
+                                    <div class="formm-control">
+                                        <p><b>Email :</b> <%= jobs[x]["email"] %></p>
+                                    </div>
+                                    
+                                    <div class="formm-control">
+                                        <p><b>Required Gender :</b> <%= jobs[x]["gender"] %></p>
+                                    </div>
+                        <div class="formm-control">
+                                        <p><b>Language :</b> <%= jobs[x]["language"] %></p>
+                                    </div>
+                                    <div class="formm-control">
+                                        <p><b>Provider needed on: </b> <%= jobs[x]["date"].toISOString().split('T')[0] %></p>
+                                    </div>
+                        <div class="formm-control">
+                                        <p><b>Address :</b> <%= jobs[x]["address"] %></p>
+                                    </div>
+                                    
+                        
+                        <div class="formm-control">
+                                        <p><b>Description about Service:</b> <%= jobs[x]["detail"] %></p>
+                                    </div>
+                        
+                        <div class="formm-control">
+                                        <p></p>
+                                    </div>
+                                    
+                                        <div class="formm-control">
+                                            <a href="/provider/applyjob?id=<%= jobs[x]["_id"]%>" class="btn btn-primary border-0 fw-bold mt-2 px-4 login-btn rounded-2 " style="margin-right: 250px;">Apply</a>
+                                                    </div>
+                                    
+                                
+                           
+                        </div>
+                        </div>
+                    </div>
+            <%}}%>
+
+<!--Footer-->
+
+<footer>
+    <div class="row mt-3 p-4">
+     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 footer-heading">
+       <img src="/images/logo.png" width="200" class="mt-3">
+       <p class="text-white">Care Fusion, Copyright &copy 2023 All rights reserved</p>
+       <p class="text-white mt-1">At Care Fusion, we transcend the conventional bounds of a service platform. 
+         Our mission goes beyond mere connection, we directly link individuals to dedicated disability support workers and aged care professionals. </p>
+     </div>
+   
+     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2  p-3 footer-heading">
+       <ul>
+         <li class="text-secondary fw-bold">Links</li>
+         <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+         <li><a href="#blog" class="text-white text-decoration-none">Blog</a></li>
+         <li><a href="#Team" class="text-white text-decoration-none">Team</a></li>
+       </ul>
+     </div>
+     
+     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+       <ul>
+         <li class="text-secondary fw-bold">Getting Started</li>
+         <li><a href="#" class="text-white text-decoration-none">Login</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Signup as a Service Seeker</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Signup as a Service Provider</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Post your care needs</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Become a care Provider</a></li>
+       </ul>
+     </div>
+   
+     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-3 footer-heading">
+       <ul>
+         <li class="text-secondary fw-bold">Important</li>
+         <li><a href="#About" class="text-white text-decoration-none">About</a></li>
+         <li><a href="/T&C-PP" class="text-white text-decoration-none">Privacy Policy</a></li>
+         <li><a href="#" class="text-white text-decoration-none">Complaints Policy</a></li>
+         <li><a href="/T&C-PP" class="text-white text-decoration-none">Terms & conditions</a></li>
+       </ul>
+     </div>  
+    </div>
+   
+    <div class="row ms-5">
+     <h4 class="text-white text-uppercase fs-5">Follow us on</h4>
+     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+       <a href="#"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" width="30px"></a>
+       <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/018/930/413/non_2x/instagram-logo-instagram-icon-transparent-free-png.png" width="50px"></a>
+       <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/027/395/710/small/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" width="35px"></a>
+       <a href="#"><img src="https://www.freeiconspng.com/uploads/whatsapp-logo-background-29.png" width="50px"></a>
+     </div>
+    </div>
+   </footer>
+
+</body>
+</html>

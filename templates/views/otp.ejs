@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <title>OTP</title>
+</head>
+
+<body>
+    <div id="emailform" class="container">
+        <form id = "otpform"  class="form-container">
+            <h2>Enter OTP </h2>
+            <input type="hidden" id="email" name="email" value=<%=email%>>
+            <!-- email field -->
+            <div class="input-group">
+                <input type="text" id="otp" name="otp" required>
+                <label>OTP</label>
+                <span class="line"></span>
+            </div>
+            
+            <!-- submit button to send reset request -->
+            <button type="submit" value="submit">Submit</button>
+            <div style="color:white;text-align: center;"><%=message%></div>
+            <!-- login link -->
+            <div class="login">
+                <p>Remember your password? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="/scripts/otp.js"></script>
+</html>

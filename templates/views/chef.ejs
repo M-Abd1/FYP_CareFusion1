@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEF</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <!-- Your CSS -->
+    <link href="/css/servicePages/services-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1616225273962-05c320ca73d2?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="First Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">ABOUT SERVICE</h5>
+                    <p style="text-align: justify;">Elevate your home dining experience with our exclusive Chef Service, offering a diverse array of
+                        culinary delights tailored to your unique preferences. Our professional chefs bring a world of
+                        flavors to your doorstep, crafting personalized menus that cater to your taste buds. From gourmet
+                        creations to comfort classics, each dish is prepared with precision and a commitment to quality.
+                        Whether it's a romantic dinner, a family celebration, or an intimate gathering with friends, our
+                        Chef Service transforms your home into a culinary haven. Indulge in the convenience of
+                        restaurant-quality meals without leaving the comfort of your home, as our chefs curate
+                        unforgettable dining experiences for you and your loved ones.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1556909115-3f381036bcb3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Second Slide">
+                <div class="carousel-caption glass">
+                    <h5 class="fs-3">Terms And Policy</h5>
+                    <ol style="text-align: justify;">
+                        <li><strong>Culinary Transformation:</strong> Chef Service at Home brings skilled chefs to your doorstep, transforming your dining experience.</li>
+                        <li><strong>Diverse and Flavorful Options:</strong> Our offerings include a delightful blend of everyday meals and special event services, ensuring a culinary delight.</li>
+                        <li><strong>From Breakfast to Dinner:</strong> Chefs infuse diverse and flavorful options into your daily dining routine, elevating meals to a new level.</li>
+                        <li><strong>Personalized Gourmet Touch:</strong> Specializing in crafting personalized menus for birthdays and anniversaries, our chefs add a gourmet touch to celebrations.</li>
+                        <li><strong>Home Dining Excellence:</strong> Chef Service at Home is designed to elevate your home dining, providing restaurant-quality meals without leaving your home.</li>
+                   </ol>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 100vh;" alt="Third Slide">
+                <div class="carousel-caption glass">
+                    <p style="text-align: justify;">Chef Service at Home caters to your culinary needs, offering a seamless blend of everyday dining
+                        and special event services. Our skilled chefs bring restaurant-quality meals to your home,
+                        ensuring a delightful dining experience for daily enjoyment. From breakfast to dinner, our
+                        services elevate your everyday meals with diverse and flavorful options.</p>
+                    <p style="text-align: justify;">For special events, our chefs specialize in crafting personalized menus that add a gourmet touch
+                        to your celebrations. Whether it's a birthday, anniversary, or any noteworthy occasion, Chef
+                        Service at Home turns your events into extraordinary culinary experiences. Impress your guests
+                        with expertly prepared dishes, creating memorable moments that go beyond the ordinary.</p>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#availNowModal">Avail Service</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="modal fade" id="availNowModal" tabindex="-1" aria-labelledby="availNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="availNowModalLabel">Avail Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body center-text">
+                    <form id="availform" action="/services/availFormAction" method="post"  novalidate>
+                        <input type="hidden" name="serviceType" value="chef"> <!-- Set the service type dynamically -->
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                            <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" 
+                                   min="0" max="100000" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceDate" class="form-label">Service Date</label>
+                            <input type="date" class="form-control" id="serviceDate" name="serviceDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="serviceTime" class="form-label">Service Time</label>
+                            <select class="form-select" id="serviceTime" name="serviceTime" required>
+                                <option value="7am-10am">7am - 10am</option>
+                                <option value="10am-1pm">10am - 1pm</option>
+                                <option value="1pm-4pm">1pm - 4pm</option>
+                                <option value="4pm-7pm">4pm - 7pm</option>
+                                <option value="7pm-8pm">7pm - 8pm</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Get Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // Custom JavaScript for form validation
+        (function () {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+
+</html>

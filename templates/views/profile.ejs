@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="/css/prov-profile.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li>
+                <a href="/provider/dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/provider/profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="/provider/statistics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Assigned Jobs</span>
+                </a>
+            </li>
+            <li>
+                
+                <li>
+                    <a href="/provider/completejob">
+                        <i class="fas fa-star"></i>
+                        <span>Complete Jobs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/provider/assignJobs">
+                        <i class="fas fa-star"></i>
+                        <span>Complete Jobs</span>
+                    </a>
+                </li>
+            </ul>
+        <ul class="menu">
+            <li class="logout"><a href="/signout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main--content">
+    <div class="header--wrapper">
+        <div class="header--title">
+            <h2>Dashboard</h2>
+        </div>
+        
+        
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>User Profile</h1>
+        </div>
+        <div class="profile-details">
+            <div class="profile-picture">
+                <img src="/images/profile.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <% if (data)  { %>
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <ul>
+                        <li><strong>Full Name:</strong> <%= data.fullname%></li>
+                        <li><strong>Gender:</strong> <%= data.gender%></li>
+                    </ul>
+                </div>
+                <div class="profile-section">
+                    <h2>Contact Information</h2>
+                    <ul>
+                        <li><strong>Email:</strong> <%=data.email%> </li>
+                        <li><strong>CNIC:</strong> <%=data.cnic%> </li>
+                        <li><strong>Phone Number:</strong> <span id = phoneNo> <%=data.phoneNo%> </span> </li>
+                        <li><strong>Address:</strong> <span id="address"> <%=data.address%> </span> </li>
+                        <li><strong>Hometown:</strong> <span id="hometown"> <%=data.hometown%> </span></li>
+                    </ul>
+                </div>
+                <div class="profile-section">
+                    <h2>Skills</h2>
+                    <ul>
+                        <% if (data.skills && data.skills.length > 0) { %>
+                            <% data.skills.forEach(skill => { %>
+                                <li><span id = skill><%= skill %> </span></li>
+                            <% }); %>
+                        <% } else { %>
+                            <li>No skill</li>
+                        <% } %>
+                    </ul>
+                </div>
+                <% } else { %>
+                    <p>Begin offering services with a completed profile.</p>
+                    <p><a href="/provider/provProfile">Become a Provider</a></p>
+                <% } %>
+            </div>
+        </div>
+        <button class="edit-button" onclick="editProfileFields()"><i class="fas fa-pencil-alt"></i></button>
+    </div>
+    </div>
+
+    <script>
+        function editProfileFields() {
+            const updPhone = document.getElementById('phoneNo');
+            const updAddress = document.getElementById('address');
+            const updHometown = document.getElementById('hometown');
+
+            //input fields for editing
+            const phoneNoInput = createInputField(updPhone.innerText, 'phoneNo')
+            const hometownInput = createInputField(updHometown.innerText, 'hometown');
+            const addressInput = createInputField(updAddress.innerText, 'address');
+
+            // Replace old values with input fields
+            replaceElement(updPhone, phoneNoInput);
+            replaceElement(updHometown, hometownInput);
+            replaceElement(updAddress, addressInput);
+
+            // Focus on the first input field
+            phoneNoInput.focus();
+        }
+
+        function createInputField(value, fieldName) {
+            const inputField = document.createElement('input');
+            inputField.type = 'text';
+            inputField.value = value;
+            inputField.dataset.fieldName = fieldName; // Store the field name in dataset
+            return inputField;
+        }
+
+        function replaceElement(oldElement, newElement) {
+            oldElement.parentNode.replaceChild(newElement, oldElement);
+
+            // Add blur event listener to save changes on input blur
+            newElement.addEventListener('blur', function() {
+                saveProfileField(this);
+            });
+        }
+
+        function saveProfileField(inputElement) {
+            const updatedValue = inputElement.value.trim();
+            const fieldName = inputElement.dataset.fieldName;
+
+            // Send AJAX request to update the field in the database
+            fetch('/provider/update-profileData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ [fieldName]: updatedValue })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to update profile field');
+                }
+                console.log(`Profile ${fieldName} updated successfully`);
+                // Replace the input field with updated value
+                const newValueElement = document.createElement('span');
+                newValueElement.innerText = updatedValue;
+                inputElement.parentNode.replaceChild(newValueElement, inputElement);
+            })
+            .catch(error => {
+                console.error(`Error updating profile ${fieldName}:`, error);
+                // Handle error and display a message to the user
+            });
+        }
+    </script>
+</body>
+</html>

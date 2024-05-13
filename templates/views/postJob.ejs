@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SERVICE SEEKER</title>
+    <link rel="stylesheet" href="/css/postJob.css">
+    <script src="/scripts/postJob.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="apply-box">
+        <form action="/seeker/jobPostAction" method="POST">
+            <div class="text-container">
+                <h1 class="hone">Tell us your care and support requirements.</h1>
+                <p>
+                    Welcome to CareFusion. We are excited to help you find the support you need.
+                    To start your job post and connect to workers, please answer the questions below.
+                    The CareFusion Platform is a community of thousands of workers from culturally and linguistically diverse backgrounds
+                    and various levels of experience and qualifications. You will be assigned your own CareFusion Account Manager
+                    who will be in touch once the job has been posted.
+                </p>
+            </div>
+            <h1 class="form-control">Posting a Job<span class="title"></span></h1>
+            <div class="form-container">
+                <div class="form-control">
+                    <label for="jobRole">Job Category</label>
+                    <select name="jobRole" id="jobRole">
+                        <option value="">Select Job Role</option>
+                        <option value="Chef">Chef</option>
+                        <option value="Gym Instructor">Gym Instructor</option>
+                        <option value="Maid">Maid</option>
+                        <option value="Health Care">Health Care</option>
+                        <option value="Event-Planner">Event-Planner</option>
+                        <option value="Make-Up">Make-Up</option>
+                        <option value="Baby Care">Baby Care</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter Full Address">
+                </div>
+                <div class="textarea-control">
+                    <label for="detail">Detail About Provider You Need?</label>
+                    <textarea name="detail" id="detail" cols="30" rows="7" placeholder="Enter details about provider to want!"></textarea>
+                </div>
+                <div class="form-control">
+                    <label for="city">City / HomeTown</label>
+                    <input type="text" id="city" name="city" placeholder="Enter City">
+                </div>
+                <div class="form-control">
+                    <label for="pincode">PinCode</label>
+                    <input type="number" id="pincode" name="pincode" placeholder="Enter Pin Code">
+                </div>
+                <div class="form-control">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" value="2024-10-24">
+                </div>
+
+                <!-- Added Gender Selection -->
+                <div class="form-control">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <!-- Added Language Preferences -->
+                <div class="form-control">
+                    <label for="language">Language Preferences</label>
+                    <select name="language" id="language">
+                        <option value="">Select Language</option>
+                        <option value="urdu">Urdu</option>
+                        <option value="english">English</option>
+                    </select>
+                </div>
+                <br>
+                <div class="button-container">
+                    <button type="submit">Create Job</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

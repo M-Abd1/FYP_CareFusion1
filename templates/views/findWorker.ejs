@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/findWorker.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Search Workers</title>
+
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo"> Find a Worker </h1>
+        <div class="menus">
+            <a href="/"><ion-icon name="home-outline"></ion-icon> Home </a>            
+            <a href="/seeker/dashboard"><ion-icon name="home-outline"></ion-icon> Dashboard </a>
+            <a href="/seeker/postJob"><ion-icon name="briefcase-outline"></ion-icon> Post a Job </a>                        
+            <a onclick="showShortlisted()" href="#" >
+                <ion-icon name="bookmarks-outline"></ion-icon> Shortlisted
+              </a>
+        </div>
+        <div class="profile">
+            <div class="profile-name">
+                <h4><%= user %></h4>
+                <p>Finding workers...</p>
+            </div>  
+        </div>
+    </div>
+
+    <div class="main" id="mainX" >
+        <div class="main-header">
+            <div class="search">
+                <input type="text" placeholder="Find your best worker here...">
+                <button class="btn-search"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
+        </div>
+        <div class="filter-wrapper">
+            <h3>Services</h3>
+            <div class="filter">
+                <button class="btn-filter" onclick="getData('Chef')">Chef</button>
+                <button class="btn-filter" onclick="getData('Gym Instructor')">Gym Instructor</button>
+                <button class="btn-filter" onclick="getData('Maid')">Maid</button>
+                <button class="btn-filter" onclick="getData('Health Care')">Health Care</button>
+            </div>
+            <div class="filter">
+                <button class="btn-filter" onclick="getData('Event-Planner')">Event-Planner</button>
+                <button class="btn-filter" onclick="getData('Make-Up')">Make-Up</button>
+                <button class="btn-filter" onclick="getData('Baby Care')">Baby Care</button>
+                <button class="btn-filter" onclick="getData('Tutor')">Tutor</button>                
+            </div>
+            
+            <div class="wrapper" id="providersDisplay"><h3>Please select services <br>whose providers you want to search<h3></div>
+        </div>
+    </div>
+    <div id="detail" class="detail"></div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="/scripts/findWorker.js"></script>
+</html>

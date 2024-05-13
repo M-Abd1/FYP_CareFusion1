@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    <title>LOGIN</title>
+    <script src="/scripts/login.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-container" onsubmit="return formValidations()" autocomplete="off" action="/loginAction" method="post">
+            <h2>Login</h2>
+            <!-- username field -->
+            <div class="input-group">
+                <input type="text" name="username" required>
+                <label>Username</label>
+                <span class="line"></span>
+            </div>
+            <!-- password field -->
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+                <label>Password</label>
+                <span class="line"></span>
+            </div>
+            <div id="pwdError" style="color: white;text-align: center;"></div>
+            <!-- remember me checkbox and forgot password link -->
+            <div class="remember-me-forgot-password">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="/forgotPassword" class="forgot-password-link">Forgot Password?</a>
+                </div>
+            </div>
+            <!-- login button to submit request -->
+            <button type="submit">Login</button>
+            <div style="color: white;text-align: center;"><%=message%></div>
+            <div class="login">
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

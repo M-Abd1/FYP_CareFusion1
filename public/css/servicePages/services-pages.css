@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+.glass{
+    background: linear-gradient(135deg, rgba(26, 18, 18, 0.267), rgba(22, 15, 15, 0.61));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 35px;
+}
+.modal-trigger {
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-trigger .btn-primary {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-trigger .btn-primary:hover {
+    background-color: #45a049;
+}

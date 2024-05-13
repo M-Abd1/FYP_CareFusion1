@@ -1,0 +1,112 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/images/postJob.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+/*Navigation Bar */
+.landing-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 700px; /* Adjust the height as needed */
+}
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px; /* Adjust the height of the image */
+    object-fit: cover; /* Ensure the image covers the entire card */
+}
+.landing-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    filter: brightness(50%); /* Adjust brightness of the image */
+}
+
+.landing-image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+.login-btn
+{
+    background: #626ee3;
+}
+.login-btn:hover
+{
+    background-color:#8993f0;
+}
+.navbar.scrolled
+{
+    background-color:#111618 !important;
+    transition: background-color 0.3s ease;
+}
+
+
+.container {
+    max-width: 950px;
+    padding: 50px;
+    margin: 0px auto;
+}
+.hone{
+    margin-bottom: 10px;
+}
+.text-container {
+    color: white;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+
+.title {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.insurance-description {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+}
+.form-control{
+    color: white;
+}
+
+
+footer{
+    background-color: #111618 ;
+    overflow: hidden;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 3px;
+}
+
+@media (max-width: 600px) {
+    .textarea-control {
+        grid-column: 1 / span 3;
+    }
+}
